@@ -135,6 +135,7 @@ public class ArticleRepositoryTest extends SpringBootDemoMongodbApplicationTests
      */
     @Test
     public void testFindByTitleLike() {
+        articleRepo.findById(123L);
         List<Article> articles = articleRepo.findByTitleLike("更新");
         log.info("【articles】= {}", JSONUtil.toJsonStr(articles));
     }
