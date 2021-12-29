@@ -21,7 +21,7 @@
               <v-spacer></v-spacer>
               <v-card-subtitle class="text-center subtitle-1 pt-0">
                 <p th:if="${param.error == null}">{{infoText}}</p>
-                <p th:unless="${param.error == null}" th:text="${param.error}" style="color: red;"></p>
+                <p th:unless="${param.error == null}" th:text="${param.error}" style="color: #ff0000;"></p>
               </v-card-subtitle>
               <v-spacer></v-spacer>
               <v-card-text>

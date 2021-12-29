@@ -41,6 +41,6 @@ public class ServerTask {
         ServerVO serverVO = ServerUtil.wrapServerVO(server);
         Dict dict = ServerUtil.wrapServerDict(serverVO);
         wsTemplate.convertAndSend(WebSocketConsts.PUSH_SERVER, JSONUtil.toJsonStr(dict));
-        log.info("【推送消息】执行结束：{}", DateUtil.formatDateTime(new Date()));
+        log.info("【推送消息】执行结束：{},大小：{}", DateUtil.formatDateTime(new Date()),JSONUtil.toJsonStr(dict).length());
     }
 }

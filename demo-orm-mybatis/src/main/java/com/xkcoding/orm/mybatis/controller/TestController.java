@@ -1,5 +1,6 @@
 package com.xkcoding.orm.mybatis.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xkcoding.orm.mybatis.$Proxy63;
 import com.xkcoding.orm.mybatis.entity.User;
 import com.xkcoding.orm.mybatis.mapper.UserMapper;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -24,6 +26,8 @@ public class TestController {
     private UserMapper userMapper;
     @Autowired
     private SqlSessionFactory factory;
+    @Resource
+    private ObjectMapper objectMapper;
 
     /**
      * 测试发送消息
