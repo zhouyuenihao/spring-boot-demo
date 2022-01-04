@@ -3,24 +3,11 @@
 <mapper namespace="com.xkcoding.orm.mybatis.mapper.UserMapper">
 
     <insert id="saveUser">
-        INSERT INTO `orm_user` (`name`,
-                                `password`,
-                                `salt`,
-                                `email`,
-                                `phone_number`,
-                                `status`,
-                                `create_time`,
-                                `last_login_time`,
-                                `last_update_time`)
+        INSERT INTO `user` (`name`,
+                                `sex`
+                             )
         VALUES (#{user.name},
-                #{user.password},
-                #{user.salt},
-                #{user.email},
-                #{user.phoneNumber},
-                #{user.status},
-                #{user.createTime},
-                #{user.lastLoginTime},
-                #{user.lastUpdateTime})
+                #{user.sex})
     </insert>
 
     <delete id="deleteById">
