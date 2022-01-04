@@ -35,8 +35,11 @@ public class TestController {
 
     @GetMapping("ok4")
     public void testSend() {
+        User user = new User();
+        user.setName("小明");
+        user.setSex("难");
         $Proxy63 proxy63 = new $Proxy63(new MapperProxy<>(factory.openSession(), UserMapper.class, new ConcurrentHashMap<>()));
-        proxy63.saveUser(new User());
-        userMapper.saveUser(new User());
+        proxy63.saveUser(user);
+        userMapper.saveUser(user);
     }
 }
