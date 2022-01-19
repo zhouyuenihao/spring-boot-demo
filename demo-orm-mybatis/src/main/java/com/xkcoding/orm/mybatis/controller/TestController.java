@@ -2,6 +2,7 @@ package com.xkcoding.orm.mybatis.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.xkcoding.orm.mybatis.$Proxy63;
+import com.xkcoding.orm.mybatis.UserService;
 import com.xkcoding.orm.mybatis.entity.User;
 import com.xkcoding.orm.mybatis.mapper.UserMapper;
 import org.apache.ibatis.binding.MapperProxy;
@@ -28,6 +29,8 @@ public class TestController {
     private SqlSessionFactory factory;
     @Resource
     private ObjectMapper objectMapper;
+    @Autowired
+    private UserService userService;
 
     /**
      * 测试发送消息
@@ -35,11 +38,18 @@ public class TestController {
 
     @GetMapping("ok4")
     public void testSend() {
+        //userService.add();
+
         User user = new User();
         user.setName("小明");
         user.setSex("难");
         $Proxy63 proxy63 = new $Proxy63(new MapperProxy<>(factory.openSession(), UserMapper.class, new ConcurrentHashMap<>()));
         proxy63.saveUser(user);
         userMapper.saveUser(user);
+    }
+
+    @GetMapping("ok5")
+    public void delete() {
+        userService.delete();
     }
 }
